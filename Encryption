@@ -1,0 +1,27 @@
+// https://www.hackerrank.com/challenges/encryption/problem
+import math
+
+que = input()
+ans = ""
+for i in que:
+    if i == " ":
+        continue
+    else:
+        ans = ans + (i)
+
+length = len(ans)
+sqrt = length ** 0.5
+rows = math.floor(sqrt)
+cols = math.ceil(sqrt)
+req = ans
+final = []
+for i in range(cols):
+    j = i
+    word = ""
+    while(j<=len(req)-1):
+        word = word + req[j]
+        j = j + cols
+    final.append(word)
+for i in final:
+    print(i,end=" ")
+    
