@@ -1,0 +1,25 @@
+// https://www.hackerrank.com/challenges/sherlock-and-squares/problem
+import math
+
+# Read the number of test cases
+n = int(input())
+ans = []
+
+for _ in range(n):
+    # Read the range [a, b]
+    a, b = map(int, input().split())
+    
+    # Calculate the number of perfect squares in the range [a, b]
+    start = math.ceil(math.sqrt(a))
+    end = math.floor(math.sqrt(b))
+    
+    if start <= end:
+        count = end - start + 1
+    else:
+        count = 0  # No perfect squares in this range
+    
+    ans.append(count)
+
+# Print the results
+for count in ans:
+    print(count)
