@@ -1,0 +1,22 @@
+// https://www.hackerrank.com/challenges/append-and-delete/problem
+def appendAndDelete(s, t, k):
+    # Find the length of the common prefix
+    common_length = 0
+    while common_length < len(s) and common_length < len(t) and s[common_length] == t[common_length]:
+        common_length += 1
+    
+    # Calculate the number of deletions and additions required
+    deletions = len(s) - common_length
+    additions = len(t) - common_length
+    total_operations = deletions + additions
+    
+    # Check if it's possible to convert s to t with exactly k operations
+    if (total_operations <= k and (k - total_operations) % 2 == 0) or k >= len(s) + len(t):
+        return "Yes"
+    else:
+        return "No"
+
+string1 = input()
+string2 = input()
+k = int(input())
+print(appendAndDelete(string1,string2,k))
