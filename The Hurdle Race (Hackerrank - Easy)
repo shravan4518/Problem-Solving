@@ -1,0 +1,9 @@
+// https://www.hackerrank.com/challenges/the-hurdle-race/problem
+li = list(map(int,input().split()))[:2]
+n = li[0]
+k = li[1]
+height = list(map(int,input().split()))[:n]
+if max(height)<k:
+    print("0")
+else:
+    print(max(height)-k)
